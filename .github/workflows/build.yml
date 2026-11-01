@@ -10,7 +10,7 @@ on:
 
 jobs:
   plugin:
-    uses: callejodev-dotcom/escoita-nucleo/.github/workflows/plugin.yml@v0.5.0
+    uses: callejodev-dotcom/escoita-nucleo/.github/workflows/plugin.yml@v0.5.1
     secrets: inherit
     permissions:
       contents: write
