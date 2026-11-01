@@ -1,0 +1,21 @@
+BARULLO ADT para Mac (Apple Silicon e Intel, macOS 11 ou posterior)
+Unha ferramenta de Escoita · https://www.escoita.link
+
+O máis doado: abre o instalador BarulloADT-…-mac.pkg. Instala:
+  - VST3:  /Library/Audio/Plug-Ins/VST3/Barullo ADT.vst3
+  - AU:    /Library/Audio/Plug-Ins/Components/Barullo ADT.component
+  - CLAP:  /Library/Audio/Plug-Ins/CLAP/Barullo ADT.clap
+  - App:   /Applications/Barullo ADT.app
+
+Se macOS di que non pode comprobar o desenvolvedor:
+  clic dereito sobre o instalador → Abrir → Abrir.
+  (Ou en Axustes do Sistema → Privacidade e seguranza → «Abrir igualmente».)
+
+Á man, con este .zip: copia cada ficheiro no cartafol de arriba que lle toca e,
+no Terminal, quítalle a marca de «descargado de internet»:
+  xattr -cr "/Library/Audio/Plug-Ins/VST3/Barullo ADT.vst3"
+  xattr -cr "/Library/Audio/Plug-Ins/Components/Barullo ADT.component"
+  xattr -cr "/Library/Audio/Plug-Ins/CLAP/Barullo ADT.clap"
+  xattr -cr "/Applications/Barullo ADT.app"
+
+Despois, volve abrir o DAW e busca «Barullo ADT» entre os efectos.
