@@ -691,7 +691,12 @@ int main (int argc, char** argv)
             return (t1 - t0) / 20000.0 * 100.0;   // % dun núcleo
         };
         const double c0 = medir (0), c13 = medir (13);
-        check (c13 < 5.0, "consumo por instancia", FMT ("(Abbey Road %.2f %%, Coro ancho %.2f %% dun núcleo)", c0, c13));
+       #ifdef BARULLO_SANITIZADORES
+        const double limite = 1000.0;   // cos sanitizadores vai dez veces máis lento: só se informa
+       #else
+        const double limite = 5.0;
+       #endif
+        check (c13 < limite, "consumo por instancia", FMT ("(Abbey Road %.2f %%, Coro ancho %.2f %% dun núcleo)", c0, c13));
         std::printf ("{\"cpu_abbey_road_pct\": %.3f, \"cpu_coro_ancho_pct\": %.3f}\n", c0, c13);
     }
     return fails;
